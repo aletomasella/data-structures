@@ -1,3 +1,4 @@
+package Arrays;
 // THE ARRAY CLASS IN JAVA!
 
 
