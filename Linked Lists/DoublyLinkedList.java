@@ -5,7 +5,7 @@ public class DoublyLinkedList <T> implements Iterable <T> {
   private Node <T> head = null;
   private Node <T> tail = null;
 
-  private class Node <T> {
+  private static class Node <T> {
     T data;
     Node <T> prev, next;
 

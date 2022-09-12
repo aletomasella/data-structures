@@ -47,6 +47,4 @@ public class Stack <T> implements Iterable <T>  {
       System.out.println(stack.pop());
     }
   }
-
-
 }
