@@ -36,6 +36,10 @@ class Queue<T> {
     const head = this.head;
     this.head = head.next;
 
+    if (!this.head) {
+      this.tail = undefined;
+    }
+
     head.next = undefined;
     head.value = undefined as any;
     return value;
