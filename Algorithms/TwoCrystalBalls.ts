@@ -15,3 +15,7 @@ const twoCrystalBalls = (breaks: boolean[]) => {
   }
   return -1;
 };
+
+// COMPLEXITY
+// Time: O(sqrt(n))
+// Space: O(1)
