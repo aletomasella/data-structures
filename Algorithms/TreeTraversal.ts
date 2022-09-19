@@ -1,3 +1,9 @@
+// Depth-First Search
+// It uses a stack to keep track of the nodes
+// It is a recursive algorithm
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
 type TreeNode<T> = {
   value: T;
   left?: TreeNode<T>;
@@ -28,4 +34,31 @@ const inOrderSearch = (root: TreeNode<number>): number[] => {
 
 const postOrderSearch = (root: TreeNode<number>): number[] => {
   return walk(root, [], "post");
+};
+
+// Breadth-First Search
+// It uses a queue to keep track of the nodes
+// It is a non-recursive algorithm
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+const breadthFirstSearch = (
+  root: TreeNode<number>,
+  value: number
+): [boolean, number[]] => {
+  const queue: TreeNode<number>[] = [root];
+  const path: number[] = [];
+  let hasValue = false;
+  while (queue.length) {
+    const current = queue.shift();
+    if (current) {
+      path.push(current.value);
+      if (current.value === value) {
+        hasValue = true;
+      }
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+  }
+  return [hasValue, path];
 };
