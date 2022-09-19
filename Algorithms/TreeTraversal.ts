@@ -62,3 +62,18 @@ const breadthFirstSearch = (
   }
   return [hasValue, path];
 };
+
+// Compare if two binary trees are equal
+
+const isEqual = (
+  a: TreeNode<number> | undefined,
+  b: TreeNode<number> | undefined
+): boolean => {
+  if (a === undefined && b === undefined) return true;
+
+  if (a === undefined || b === undefined) return false;
+
+  if (a.value !== b.value) return false;
+
+  return isEqual(a.left, b.left) && isEqual(a.right, b.right);
+};
