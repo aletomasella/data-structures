@@ -3,23 +3,35 @@
 const qs = (arr: number[], low: number, high: number) => {
   if (low >= high) return;
 
+  // partition the array
+
   const pivotIndex = partition(arr, low, high);
+  // sort the left side of the array
   qs(arr, low, pivotIndex - 1);
+  // sort the right side of the array
   qs(arr, pivotIndex + 1, high);
 };
 
 const partition = (arr: number[], low: number, high: number) => {
+  // choose the middle element as the pivot
   const pivot = arr[Math.floor((low + high) / 2)];
+  // initialize the index of the smaller element
   let index = low - 1;
+  // loop through the array
   for (let i = low; i < high; i++) {
+    // if the current element is smaller than the pivot
     if (arr[i] < pivot) {
+      // increment the index of the smaller element
       index++;
+      // swap the current element with the element at the index
       const temp = arr[index];
       arr[index] = arr[i];
       arr[i] = temp;
     }
   }
+  // swap the element at the index with the pivot
   index++;
+  console.log(index);
   arr[high] = arr[index];
   arr[index] = pivot;
   return index;
