@@ -7,6 +7,7 @@ const linearSearch = (arr: number[], target: number) => {
   return { index: -1, value: null, found: false };
 };
 
+// Complexity Analysis
 // O(n) time complexity
 // O(1) space complexity
 
