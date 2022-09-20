@@ -81,4 +81,25 @@ class BinarySearchTree {
     };
     this.root = removeNode(this.root, value);
   }
+
+  // Depth First Search
+
+  DepthFirstSearch(root = this.root, value: number) {
+    return this.search(root, value);
+  }
+
+  private search = (
+    node: TreeNodeS<number> | undefined,
+    value: number
+  ): boolean => {
+    if (!node) return false;
+
+    if (node.value === value) return true;
+
+    if (value < node.value) {
+      return this.search(node.left, value);
+    }
+
+    return this.search(node.right, value);
+  };
 }
