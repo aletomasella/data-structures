@@ -9,7 +9,7 @@ type GraphEdge = {
   to: number;
 };
 
-type WeightedAdjacencyList = GraphEdge[][];
+type WeightedAdjacencyList = CompleteGraphEdge[][];
 
 const walk = (
   graph: WeightedAdjacencyList,
