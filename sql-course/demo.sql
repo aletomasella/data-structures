@@ -1,0 +1,44 @@
+-- CLAUSULA SELECT 
+
+SELECT * FROM categories; 
+-- TRAE TODO DE LA TABLA categories
+SELECT CompanyName, ContactName, City FROM customers;
+-- TRAE LOS CAMPOS CompanyName, ContactName, City DE LA TABLA customers
+SELECT distinct City FROM customers;
+-- TRAE LOS CAMPOS City DE LA TABLA customers SIN REPETIR
+SELECT count(distinct Country) FROM customers;
+-- TRAE LA CANTIDAD DE PAISES DIFERENTES DE LA TABLA customers
+
+-- CLAUSULA WHERE 
+SELECT * FROM categories WHERE id = 1;
+-- TRAE TODO DE LA TABLA categories DONDE EL ID SEA IGUAL A 1
+SELECT * FROM costumers WHERE Country = 'Mexico';
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS SEA IGUAL A Mexico
+SELECT * FROM products WHERE UnitPrice > 20;
+-- TRAE TODO DE LA TABLA products DONDE EL UnitPrice SEA MAYOR A 20
+SELECT * FROM products WHERE UnitPrice <> 20;
+-- TRAE TODO DE LA TABLA products DONDE EL UnitPrice SEA DIFERENTE A 20
+SELECT * FROM products WHERE UnitPrice BETWEEN 10 AND 20;
+-- TRAE TODO DE LA TABLA products DONDE EL UnitPrice SEA ENTRE 10 Y 20
+SELECT * FROM products WHERE UnitPrice NOT BETWEEN 10 AND 20;
+-- TRAE TODO DE LA TABLA products DONDE EL UnitPrice NO SEA ENTRE 10 Y 20
+SELECT * FROM costumers WHERE Country = 'Mexico' AND City = 'Mexico';
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS SEA IGUAL A Mexico Y LA CIUDAD SEA IGUAL A Mexico
+SELECT * FROM costumers WHERE Country = 'Mexico' OR City = 'Mexico';
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS SEA IGUAL A Mexico O LA CIUDAD SEA IGUAL A Mexico
+SELECT * FROM costumers WHERE Country IN ('Mexico', 'USA');
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS SEA IGUAL A Mexico O USA
+SELECT * FROM costumers WHERE Country NOT IN ('Mexico', 'USA');
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS NO SEA IGUAL A Mexico O USA
+SELECT * FROM costumers WHERE Country LIKE 'M%';
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS EMPIECE CON M
+SELECT * FROM costumers WHERE Country LIKE '%a' ORDER BY Country DESC;
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS TERMINE CON a ORDENADO DE MANERA DESCENDENTE
+SELECT * FROM costumers WHERE Country LIKE '%a' ORDER BY Country ASC, City DESC;
+-- TRAE TODO DE LA TABLA costumers DONDE EL PAIS TERMINE CON a ORDENADO DE MANERA ASCENDENTE Y LA CIUDAD DE MANERA DESCENDENTE
+
+
+
+
+
+
